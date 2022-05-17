@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" launchScreen="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="01J-lp-oVM">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Montserrat-Regular.ttf">
+            <string>Montserrat-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="EHf-IW-A2E">
+            <objects>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="launch-screen-background" translatesAutoresizingMaskIntoConstraints="NO" id="8zN-tJ-WTX">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="logo-shadow" translatesAutoresizingMaskIntoConstraints="NO" id="TxJ-WH-WQp">
+                                <rect key="frame" x="111" y="373.5" width="192" height="149"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PT. Indofood CBP Sukses Tbk." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRn-YJ-0hY">
+                                <rect key="frame" x="103.5" y="844" width="207" height="18"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Regular" family="Montserrat" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Versi 1.0.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1sR-6s-yiN">
+                                <rect key="frame" x="171" y="819" width="72" height="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Bcu-3y-fUS"/>
+                        <constraints>
+                            <constraint firstItem="TxJ-WH-WQp" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="DjN-Xv-mdN"/>
+                            <constraint firstItem="TxJ-WH-WQp" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="HPg-xv-V1H"/>
+                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="trailing" secondItem="8zN-tJ-WTX" secondAttribute="trailing" id="KEc-Rj-Zgp"/>
+                            <constraint firstItem="Bcu-3y-fUS" firstAttribute="bottom" secondItem="dRn-YJ-0hY" secondAttribute="bottom" id="PUe-nk-GDX"/>
+                            <constraint firstItem="8zN-tJ-WTX" firstAttribute="leading" secondItem="Bcu-3y-fUS" secondAttribute="leading" id="XVV-Lx-5DY"/>
+                            <constraint firstItem="8zN-tJ-WTX" firstAttribute="top" secondItem="Ze5-6b-2t3" secondAttribute="top" id="ZJn-ZG-co8"/>
+                            <constraint firstItem="dRn-YJ-0hY" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="dDy-b4-6OQ"/>
+                            <constraint firstItem="1sR-6s-yiN" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="ejw-kG-8r5"/>
+                            <constraint firstItem="dRn-YJ-0hY" firstAttribute="top" secondItem="1sR-6s-yiN" secondAttribute="bottom" constant="8" symbolic="YES" id="mj1-sV-HOc"/>
+                            <constraint firstAttribute="bottom" secondItem="8zN-tJ-WTX" secondAttribute="bottom" id="sWu-JY-wRK"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52.173913043478265" y="375"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="launch-screen-background" width="375" height="812"/>
+        <image name="logo-shadow" width="192" height="149"/>
+    </resources>
+</document>
