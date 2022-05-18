@@ -5,9 +5,10 @@
 //  Created by Alfin on 17/05/22.
 //
 
-import Foundation
+import SwiftUI
 
 struct NavItem {
-    var label: String
+    var name: String
     var icon: String
+    var view: AnyView
 }

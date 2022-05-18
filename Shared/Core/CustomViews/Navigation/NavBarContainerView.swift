@@ -12,15 +12,17 @@ struct NavBarContainerView<Content: View>: View {
     
     var body: some View {
         ZStack {
+            Color.systemBackground
+                .ignoresSafeArea()
+            
             VStack(spacing: 0) {
                 if show {
-                    navBarView
-                        .opacity(0)
+                    // Content EdgeInsets (Top) 👇
+                    navBarView.opacity(0)
                 }
                 
-                content.frame(maxWidth: .infinity, maxHeight: .infinity)
+                content
                     .onPreferenceChange(NavBarTitlePreferenceKey.self) { value in
-                        print("NavBarTitlePreferenceKey: \(value)")
                         title = value
                     }
                     .onPreferenceChange(NavBarBackButtonHiddenPreferenceKey.self) { value in

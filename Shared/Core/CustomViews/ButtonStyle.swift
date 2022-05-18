@@ -17,7 +17,7 @@ struct PrimaryButton: ButtonStyle {
             .foregroundColor(Color.accentColor)
             .cornerRadius(12)
             .opacity(configuration.isPressed ? 0.5 : 1)
-            .shadow(color: Color(hex: 0x000000, alpha: 0.1), radius: 5, x: 0, y: 5)
+            .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 5)
     }
 }
 
@@ -27,14 +27,14 @@ struct GlassButton: ButtonStyle {
             .font(.headline.weight(.semibold))
             .padding()
             .frame(maxWidth: .infinity)
-            .background(Color(hex: 0xFFFFFF, alpha: 0.15))
+            .background(Color.white.opacity(0.15))
             .foregroundColor(.white)
             .cornerRadius(12)
             .overlay(
                 RoundedRectangle(cornerRadius: 12)
-                    .stroke(Color(hex: 0xFFFFFF, alpha: 0.75), lineWidth: 1)
+                    .stroke(Color.white.opacity(0.5), lineWidth: 1)
             )
             .opacity(configuration.isPressed ? 0.5 : 1)
-            .shadow(color: Color(hex: 0x000000, alpha: 0.1), radius: 5, x: 0, y: 5)
+            .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 5)
     }
 }

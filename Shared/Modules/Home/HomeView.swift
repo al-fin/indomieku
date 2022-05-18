@@ -14,10 +14,6 @@ struct HomeView: View {
         VStack {
             Text("Home")
                 .font(.largeTitle)
-            
-            Button("Logout") {
-                presenter.logout()
-            }
         }
         .padding()
     }

@@ -11,23 +11,23 @@ struct ContentView: View {
     @StateObject var appState = AppState.shared
     
     var body: some View {
-        VStack {
-            if appState.isAuthenticated {
-                NavView {
+        NavView {
+            VStack {
+                if appState.isAuthenticated {
                     BottomNavigationView(
                         presenter: BottomNavigationPresenter(
                             interactor: BottomNavigationInteractor()
                         )
                     )
-                }
-                .transition(.slide)
-            } else {
-                LoginView(
-                    presenter: LoginPresenter(
-                        interactor: LoginInteractor()
+                    .transition(.slide)
+                } else {
+                    LoginView(
+                        presenter: LoginPresenter(
+                            interactor: LoginInteractor()
+                        )
                     )
-                )
-                .transition(.slide)
+                    .transition(.slide)
+                }
             }
         }
     }

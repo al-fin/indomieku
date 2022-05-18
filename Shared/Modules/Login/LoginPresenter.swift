@@ -36,7 +36,8 @@ final class LoginPresenter: LoginPresenterProtocol, ObservableObject {
     }
     
     func onLoginTapped() {
-        withAnimation {
+        withAnimation(.easeOut) {
+            appState.bottomNavigation = "Home"
             appState.isAuthenticated = true
         }
         
@@ -61,8 +62,9 @@ final class LoginPresenter: LoginPresenterProtocol, ObservableObject {
 //            }, receiveValue: { [weak self] value in
 //                print("SUCCESS: \(value)")
 //
-//                withAnimation {
-//                    self?.appState.isAuthenticated = true
+//                withAnimation(.easeOut) {
+//                    appState.bottomNavigation = "Home"
+//                    appState.isAuthenticated = true
 //                }
 //            })
 //            .store(in: &cancellables)

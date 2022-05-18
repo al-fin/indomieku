@@ -10,9 +10,7 @@ import SwiftUI
 
 protocol HomePresenterProtocol {
     var interactor: HomeInteractor { get }
-    
-    func logout()
-}
+    }
 
 final class HomePresenter: HomePresenterProtocol, ObservableObject {
     internal let interactor: HomeInteractor
@@ -21,11 +19,5 @@ final class HomePresenter: HomePresenterProtocol, ObservableObject {
 
     init(interactor: HomeInteractor) {
         self.interactor = interactor
-    }
-    
-    func logout() {
-        withAnimation {
-            appState.isAuthenticated = false
-        }
     }
 }

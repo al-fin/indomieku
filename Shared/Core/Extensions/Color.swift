@@ -25,9 +25,9 @@ extension Color {
     static let quaternaryLabel = Color(UIColor.quaternaryLabel)
 
     // MARK: - Background Colors
-    static let systemBackground = Color(UIColor.systemBackground)
-    static let secondarySystemBackground = Color(UIColor.secondarySystemBackground)
-    static let tertiarySystemBackground = Color(UIColor.tertiarySystemBackground)
+    static let systemBackground = Color("SystemBackgroundColor")
+    static let secondarySystemBackground = Color("SecondarySystemBackgroundColor")
+    static let tertiarySystemBackground = Color("TertiarySystemBackgroundColor")
     
     // MARK: - Fill Colors
     static let systemFill = Color(UIColor.systemFill)

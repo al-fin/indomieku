@@ -30,8 +30,8 @@ struct NavBarView: View {
                 Spacer()
             }
             .padding()
-            .background(Color.systemBackground.ignoresSafeArea())
-            .shadow(color: Color.black.opacity(0.15), radius: 16, x: 0, y: 2)
+            .background(Color.secondarySystemBackground.ignoresSafeArea())
+            .shadow(color: Color.black.opacity(0.15), radius: 16, x: 0, y: 0)
             .if(colorScheme == .dark) { view in
                 view.border(width: 1, edges: [.bottom], color: Color.label.opacity(0.15))
             }

@@ -7,14 +7,9 @@
 
 import SwiftUI
 
-// conditional view modifier
+// conditional view modifier :
 
 extension View {
-    /// Applies the given transform if the given condition evaluates to `true`.
-    /// - Parameters:
-    ///   - condition: The condition to evaluate.
-    ///   - transform: The transform to apply to the source `View`.
-    /// - Returns: Either the original `View` or the modified `View` if the condition is `true`.
     @ViewBuilder func `if`<Content: View>(_ condition: Bool, transform: (Self) -> Content) -> some View {
         if condition {
             transform(self)
@@ -24,7 +19,7 @@ extension View {
     }
 }
 
-// border
+// border :
 
 extension View {
     func border(width: CGFloat, edges: [Edge], color: Color) -> some View {
@@ -70,5 +65,20 @@ struct EdgeBorder: Shape {
             path.addPath(Path(CGRect(x: x, y: y, width: w, height: h)))
         }
         return path
+    }
+}
+
+// placeholder
+
+extension View {
+    func placeholder<Content: View>(
+        when shouldShow: Bool,
+        alignment: Alignment = .leading,
+        @ViewBuilder placeholder: () -> Content) -> some View {
+
+        ZStack(alignment: alignment) {
+            placeholder().opacity(shouldShow ? 1 : 0)
+            self
+        }
     }
 }
