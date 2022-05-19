@@ -29,6 +29,7 @@ struct BottomNavigation: View {
                 .frame(height: 64)
             }
             .frame(maxWidth: .infinity)
+//            .background(.ultraThinMaterial)
             .background(Color.secondarySystemBackground)
             .shadow(color: Color.black.opacity(0.15), radius: 16, x: 0, y: 0)
             .if(colorScheme == .dark) { view in

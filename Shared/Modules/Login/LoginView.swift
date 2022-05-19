@@ -39,14 +39,18 @@ struct LoginView: View {
                 VStack(spacing: 10) {
                     CustomTextField(
                         label: "Alamat Email",
-                        text: $presenter.email
+                        text: $presenter.email,
+                        size: .large,
+                        theme: .light
                     )
                     
                     CustomTextField(
                         type: .password,
                         label: "Kata Sandi",
                         text: $presenter.password,
-                        endIcon: "eye.slash.fill"
+                        endIcon: "eye.slash.fill",
+                        size: .large,
+                        theme: .light
                     )
                 }
 

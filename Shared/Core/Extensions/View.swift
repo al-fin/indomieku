@@ -82,3 +82,22 @@ extension View {
         }
     }
 }
+
+
+// card
+
+extension View {
+
+    func card() -> some View {
+        @Environment(\.colorScheme) var colorScheme
+        
+        return self
+            .frame(maxWidth: .infinity)
+            .background(Color.tertiarySystemBackground.ignoresSafeArea())
+            .cornerRadius(16)
+            .shadow(color: Color.black.opacity(0.25), radius: 8, x: 0, y: 2)
+            .if(colorScheme == .dark) { view in
+                view.border(width: 1, edges: [.leading, .top, .trailing, .bottom], color: Color.label.opacity(0.15))
+            }
+    }
+}

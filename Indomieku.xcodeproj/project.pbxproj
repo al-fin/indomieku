@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A101116528367F1D005F772F /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = A101116428367F1D005F772F /* UIApplication.swift */; };
 		A103BC2B282BEF2C0058B062 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A103BC2A282BEF2C0058B062 /* LoginView.swift */; };
 		A103BC34282BFA110058B062 /* HomeInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A103BC31282BFA110058B062 /* HomeInteractor.swift */; };
 		A103BC35282BFA110058B062 /* HomePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = A103BC32282BFA110058B062 /* HomePresenter.swift */; };
@@ -50,7 +51,10 @@
 		A17B6225282BD24500657323 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17B6224282BD24500657323 /* LoginInteractor.swift */; };
 		A17B6228282BD9E100657323 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17B6227282BD9E100657323 /* APIManager.swift */; };
 		A17B622B282BE5E900657323 /* Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17B622A282BE5E900657323 /* Config.swift */; };
+		A18E07F92835F71500A1269A /* ProductCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = A18E07F82835F71500A1269A /* ProductCategory.swift */; };
 		A190ED3B28328B9C001CE94A /* BottomNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A190ED3A28328B9C001CE94A /* BottomNavigation.swift */; };
+		A1A138D5283509F100BF65C6 /* PlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A138D4283509F100BF65C6 /* PlaygroundView.swift */; };
+		A1A138D6283509F100BF65C6 /* PlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A138D4283509F100BF65C6 /* PlaygroundView.swift */; };
 		A1A34CA2282A5C9800D6C0B7 /* IndomiekuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A34C92282A5C8700D6C0B7 /* IndomiekuApp.swift */; };
 		A1A34CA3282A5C9800D6C0B7 /* IndomiekuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A34C92282A5C8700D6C0B7 /* IndomiekuApp.swift */; };
 		A1A34CA4282A5C9800D6C0B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A34C93282A5C8700D6C0B7 /* ContentView.swift */; };
@@ -72,6 +76,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A101116428367F1D005F772F /* UIApplication.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		A103BC2A282BEF2C0058B062 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		A103BC31282BFA110058B062 /* HomeInteractor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeInteractor.swift; sourceTree = "<group>"; };
 		A103BC32282BFA110058B062 /* HomePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomePresenter.swift; sourceTree = "<group>"; };
@@ -115,7 +120,9 @@
 		A17B6224282BD24500657323 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		A17B6227282BD9E100657323 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		A17B622A282BE5E900657323 /* Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Config.swift; sourceTree = "<group>"; };
+		A18E07F82835F71500A1269A /* ProductCategory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCategory.swift; sourceTree = "<group>"; };
 		A190ED3A28328B9C001CE94A /* BottomNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BottomNavigation.swift; sourceTree = "<group>"; };
+		A1A138D4283509F100BF65C6 /* PlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundView.swift; sourceTree = "<group>"; };
 		A1A34C92282A5C8700D6C0B7 /* IndomiekuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndomiekuApp.swift; sourceTree = "<group>"; };
 		A1A34C93282A5C8700D6C0B7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A1A34C94282A5C9800D6C0B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -288,6 +295,7 @@
 			children = (
 				A17B6220282BCFEE00657323 /* User.swift */,
 				A169D358282FC30500A43547 /* AppState.swift */,
+				A18E07F82835F71500A1269A /* ProductCategory.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -327,6 +335,7 @@
 				A17B6219282BCF0B00657323 /* Modules */,
 				A1A34C92282A5C8700D6C0B7 /* IndomiekuApp.swift */,
 				A1A34C93282A5C8700D6C0B7 /* ContentView.swift */,
+				A1A138D4283509F100BF65C6 /* PlaygroundView.swift */,
 				A1F385A7282C91F200B2B264 /* Indomieku.xcdatamodeld */,
 				A1F385A1282C869800B2B264 /* LaunchScreen.storyboard */,
 				A1A34C94282A5C9800D6C0B7 /* Assets.xcassets */,
@@ -386,6 +395,7 @@
 				A1A34CBA282A61B300D6C0B7 /* Color.swift */,
 				A1A34CBD282A661E00D6C0B7 /* Theme.swift */,
 				A1052E5C2832664F002A3E4A /* View.swift */,
+				A101116428367F1D005F772F /* UIApplication.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -490,6 +500,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A101116528367F1D005F772F /* UIApplication.swift in Sources */,
 				A166AD4D2831FB820001DBDD /* CartPresenter.swift in Sources */,
 				A12B61E5282F3EC500A94C86 /* LabelledDivider.swift in Sources */,
 				A166AD492831FB820001DBDD /* TransactionInteractor.swift in Sources */,
@@ -517,6 +528,7 @@
 				A103BC34282BFA110058B062 /* HomeInteractor.swift in Sources */,
 				A1A34CBE282A661E00D6C0B7 /* Theme.swift in Sources */,
 				A166AD512831FB820001DBDD /* ProfileView.swift in Sources */,
+				A1A138D5283509F100BF65C6 /* PlaygroundView.swift in Sources */,
 				A166AD4C2831FB820001DBDD /* NotificationView.swift in Sources */,
 				A12B61E0282F3E7200A94C86 /* ButtonStyle.swift in Sources */,
 				A166AD4F2831FB820001DBDD /* CartView.swift in Sources */,
@@ -524,6 +536,7 @@
 				A169D35C282FCBB000A43547 /* PINInteractor.swift in Sources */,
 				A166AD4A2831FB820001DBDD /* NotificationPresenter.swift in Sources */,
 				A1182979282BEAD9007BFDF0 /* LoginPresenter.swift in Sources */,
+				A18E07F92835F71500A1269A /* ProductCategory.swift in Sources */,
 				A17B6225282BD24500657323 /* LoginInteractor.swift in Sources */,
 				A1A34CA2282A5C9800D6C0B7 /* IndomiekuApp.swift in Sources */,
 				A190ED3B28328B9C001CE94A /* BottomNavigation.swift in Sources */,
@@ -555,6 +568,7 @@
 				A1A34CA3282A5C9800D6C0B7 /* IndomiekuApp.swift in Sources */,
 				A1F385AA282C91F200B2B264 /* Indomieku.xcdatamodeld in Sources */,
 				A1A34CB9282A60CC00D6C0B7 /* Font.swift in Sources */,
+				A1A138D6283509F100BF65C6 /* PlaygroundView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

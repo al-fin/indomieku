@@ -11,6 +11,18 @@ enum TextFieldType: String {
     case text, password
 }
 
+enum IconSource: String {
+    case sf_symbol, assets
+}
+
+enum TextFieldSize: String {
+    case large, normal
+}
+
+enum TextFieldTheme: String {
+    case system, light
+}
+
 struct CustomTextField: View {
     @Environment(\.colorScheme) var colorScheme
 
@@ -20,6 +32,9 @@ struct CustomTextField: View {
     var text: Binding<String>
     var startIcon: String?
     var endIcon: String?
+    var iconSource: IconSource
+    var size: TextFieldSize
+    var theme: TextFieldTheme
 
     init(
         type: TextFieldType = .text,
@@ -27,7 +42,10 @@ struct CustomTextField: View {
         placeholder: String? = nil,
         text: Binding<String>,
         startIcon: String? = nil,
-        endIcon: String? = nil
+        endIcon: String? = nil,
+        iconSource: IconSource = .sf_symbol,
+        size: TextFieldSize = .normal,
+        theme: TextFieldTheme = .system
     ) {
         self.type = type
         self.label = label
@@ -35,33 +53,47 @@ struct CustomTextField: View {
         self.text = text
         self.startIcon = startIcon
         self.endIcon = endIcon
+        self.iconSource = iconSource
+        self.size = size
+        self.theme = theme
     }
     
     var body: some View {
         VStack(alignment: .leading) {
-            Text(label)
-                .font(.caption.weight(.bold))
-                .foregroundColor(.white)
+            if label != "" {
+                Text(label)
+                    .font(.caption.weight(.bold))
+                    .foregroundColor(theme == .light ? .white : .systemBackground)
+            }
             
             HStack {
                 if startIcon != nil {
-                    Image(systemName: startIcon!)
-                        .foregroundColor(.secondaryLabel)
+                    AnyView(
+                        iconSource == .assets ?
+                            Image(startIcon!).renderingMode(.template) :
+                            Image(systemName: startIcon!)
+                    )
+                    .foregroundColor(theme == .light ? .black.opacity(0.25) : .label.opacity(0.25))
                 }
                 
                 textField
-                    .foregroundColor(.black.opacity(0.75))
+                    .foregroundColor(theme == .light ? .black.opacity(0.75) : .label)
                     .placeholder(when: text.wrappedValue.isEmpty) {
-                        Text(placeholder ?? label).foregroundColor(.black.opacity(0.25))
+                        Text(placeholder ?? label).foregroundColor(theme == .light ?  .black.opacity(0.25) : .label.opacity(0.25))
                     }
                 
                 if endIcon != nil {
-                    Image(systemName: endIcon!)
-                        .foregroundColor(.black.opacity(0.25))
+                    AnyView(
+                        iconSource == .assets ?
+                            Image(endIcon!).renderingMode(.template) :
+                            Image(systemName: endIcon!)
+                    )
+                    .foregroundColor(theme == .light ?  .black.opacity(0.25) : .label.opacity(0.25))
                 }
             }
-            .padding()
-            .background(Color.white)
+            .padding(.horizontal)
+            .padding(.vertical, size == .large ? 16 : 12)
+            .background(theme == .light ? Color.white : Color.tertiarySystemBackground)
             .cornerRadius(12)
             .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 5)
         }
