@@ -23,6 +23,15 @@ enum TextFieldTheme: String {
     case system, light
 }
 
+extension Image {
+    func textFieldIcon(size: TextFieldSize = .normal) -> some View {
+        self
+            .resizable()
+            .scaledToFit()
+            .frame(width: size == .large ? 24 : 16)
+    }
+}
+
 struct CustomTextField: View {
     @Environment(\.colorScheme) var colorScheme
 
@@ -70,9 +79,12 @@ struct CustomTextField: View {
                 if startIcon != nil {
                     AnyView(
                         iconSource == .assets ?
-                            Image(startIcon!).renderingMode(.template) :
-                            Image(systemName: startIcon!)
+                        Image(startIcon!).renderingMode(.template)
+                            .textFieldIcon(size: size) :
+                        Image(systemName: startIcon!)
+                            .textFieldIcon(size: size)
                     )
+                        
                     .foregroundColor(theme == .light ? .black.opacity(0.25) : .label.opacity(0.25))
                 }
                 
@@ -85,14 +97,16 @@ struct CustomTextField: View {
                 if endIcon != nil {
                     AnyView(
                         iconSource == .assets ?
-                            Image(endIcon!).renderingMode(.template) :
-                            Image(systemName: endIcon!)
+                        Image(endIcon!).renderingMode(.template)
+                            .textFieldIcon(size: size) :
+                        Image(systemName: endIcon!)
+                            .textFieldIcon(size: size)
                     )
                     .foregroundColor(theme == .light ?  .black.opacity(0.25) : .label.opacity(0.25))
                 }
             }
             .padding(.horizontal)
-            .padding(.vertical, size == .large ? 16 : 12)
+            .padding(.vertical, size == .large ? 16 : 8)
             .background(theme == .light ? Color.white : Color.tertiarySystemBackground)
             .cornerRadius(12)
             .shadow(color: Color.black.opacity(0.1), radius: 5, x: 0, y: 5)

@@ -21,26 +21,33 @@ final class HomePresenter: HomePresenterProtocol, ObservableObject {
     
     let appState = AppState.shared
     
+    let products: [Product] = Array(1...5).map { item in
+        Product(
+            id: item,
+            images: ["mie"],
+            name: "Indomie Goreng",
+            price: 30000,
+            discount: 50,
+            stock: 250,
+            totalSold: 750,
+            rating: 5.0
+        )
+    }
+    
     let categories: [ProductCategory] = [
         ProductCategory(name: "Ayam Geprek", image: "1-indomie"),
         ProductCategory(name: "Original", image: "2-indomie"),
         ProductCategory(name: "Rendang", image: "3-indomie"),
         ProductCategory(name: "Soto", image: "4-indomie"),
         ProductCategory(name: "Ayam Bawang", image: "5-indomie"),
-        ProductCategory(name: "Mi Goreng Aceh", image: "6-indomie"),
+        ProductCategory(name: "Mie Aceh", image: "6-indomie"),
         ProductCategory(name: "Pedas", image: "7-indomie"),
         ProductCategory(name: "Kari Ayam", image: "8-indomie"),
         ProductCategory(name: "Seblak", image: "9-indomie"),
         ProductCategory(name: "Cabe Ijo", image: "10-indomie"),
     ]
     
-    let banners: [String] = [
-        "1-banner",
-        "2-banner",
-        "3-banner",
-        "4-banner",
-        "5-banner",
-    ]
+    let banners: [String] = Array(1...5).map { "\($0)-banner" }
 
     
     @Published internal var keyword = ""

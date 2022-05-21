@@ -9,14 +9,14 @@ import SwiftUI
 
 struct ContentView: View {
     @StateObject var appState = AppState.shared
-    
+
     var body: some View {
         NavView {
             VStack {
                 if appState.isAuthenticated {
-                    BottomNavigationView(
-                        presenter: BottomNavigationPresenter(
-                            interactor: BottomNavigationInteractor()
+                    AppView(
+                        presenter: AppPresenter(
+                            interactor: AppInteractor()
                         )
                     )
                     .transition(.slide)

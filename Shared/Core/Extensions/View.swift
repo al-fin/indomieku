@@ -22,8 +22,17 @@ extension View {
 // border :
 
 extension View {
+    // border per edge
     func border(width: CGFloat, edges: [Edge], color: Color) -> some View {
         overlay(EdgeBorder(width: width, edges: edges).foregroundColor(color))
+    }
+    
+    // border with corner radius
+    func border(width: CGFloat, cornerRadius: Double, color: Color) -> some View {
+        overlay(
+           RoundedRectangle(cornerRadius: 16)
+               .stroke(color, lineWidth: width)
+       )
     }
 }
 
@@ -97,7 +106,7 @@ extension View {
             .cornerRadius(16)
             .shadow(color: Color.black.opacity(0.25), radius: 8, x: 0, y: 2)
             .if(colorScheme == .dark) { view in
-                view.border(width: 1, edges: [.leading, .top, .trailing, .bottom], color: Color.label.opacity(0.15))
+                view.border(width: 1, cornerRadius: 16, color: Color.label.opacity(0.15))
             }
     }
 }
