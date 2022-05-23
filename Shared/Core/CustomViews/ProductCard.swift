@@ -21,26 +21,30 @@ struct ProductCard: View {
             VStack(alignment: .leading) {
                 HStack(alignment: .top) {
                     VStack(alignment: .leading) {
-                        Text(Int(Double(product.price) - (Double(product.price) * Double(Double(product.discount)/100.0))).formattedCurrency())
+                        Text(Int(Double(product.price) - (Double(product.price) * Double(Double(product.discount)/100.0))).formattedCurrency)
                             .font(.title3.weight(.bold))
                             .foregroundColor(.accentColor)
                         
-                        Text(product.price.formattedCurrency())
-                            .font(.caption.weight(.light))
-                            .foregroundColor(.secondaryLabel)
-                            .strikethrough(color: .secondaryLabel)
+                        if product.discount > 0 {
+                            Text(product.price.formattedCurrency)
+                                .font(.caption.weight(.light))
+                                .foregroundColor(.secondaryLabel)
+                                .strikethrough(color: .secondaryLabel)
+                        }
                     }
                     
                     Spacer()
                     
-                    Text("\(product.discount)%")
-                        .font(.caption.weight(.regular))
-                        .foregroundColor(.accentColor)
-                        .padding(.vertical, 4)
-                        .padding(.horizontal, 8)
-                        .background(Color.accentColor.opacity(0.25))
-                        .cornerRadius(8)
-                        .border(width: 1, cornerRadius: 8, color: Color.accentColor.opacity(0.5))
+                    if product.discount > 0 {
+                        Text("\(product.discount)%")
+                            .font(.caption.weight(.regular))
+                            .foregroundColor(.accentColor)
+                            .padding(.vertical, 4)
+                            .padding(.horizontal, 8)
+                            .background(Color.accentColor.opacity(0.15))
+                            .cornerRadius(8)
+                            .border(width: 1, cornerRadius: 8, color: Color.accentColor.opacity(0.5))
+                    }
                 }
                 
                 Text(product.name)
@@ -64,8 +68,8 @@ struct ProductCard: View {
                 } else {
                     HStack(spacing: 4) {
                         Image(systemName: "star.fill")
-                            .font(.caption.weight(.light))
-                            .foregroundColor(.secondaryColor)
+                            .font(.caption)
+                            .foregroundColor(.gold)
                         
                         Text("\(product.rating, specifier: "%.1f")  |  \(product.totalSold) Terjual")
                             .font(.caption.weight(.light))

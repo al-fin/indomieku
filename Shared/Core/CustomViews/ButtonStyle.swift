@@ -7,7 +7,28 @@
 
 import SwiftUI
 
-struct PrimaryButton: ButtonStyle {
+struct AccentButton: ButtonStyle {
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .font(.caption.weight(.bold))
+            .padding(.vertical, 6)
+            .padding(.horizontal, 12)
+            .background(
+                LinearGradient(
+                    gradient: Gradient(
+                        colors: [Color(hex: 0xFF8E8E), Color(hex: 0xF85D5D)]
+                    ),
+                    startPoint: .top,
+                    endPoint: .bottom
+                )
+            )
+            .foregroundColor(Color.secondarySystemBackground)
+            .cornerRadius(8)
+            .opacity(configuration.isPressed ? 0.5 : 1)
+    }
+}
+
+struct SecondaryButton: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .font(.headline.weight(.bold))

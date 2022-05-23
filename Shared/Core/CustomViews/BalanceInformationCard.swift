@@ -10,6 +10,7 @@ import SwiftUI
 
 struct BalanceInformationCard: View {
     @Environment(\.colorScheme) var colorScheme
+    @State private var showBalance: Bool = true
 
     var body: some View {
         HStack(spacing: 20) {
@@ -19,7 +20,7 @@ struct BalanceInformationCard: View {
                 .frame(height: 44)
             
             VStack(alignment: .leading) {
-                Text("Rp 12,000,000")
+                Text(showBalance ? "Rp 12,000,000" : "Rp •••••••••••")
                     .font(.title2.weight(.bold))
                     .foregroundColor(.label)
                 
@@ -30,11 +31,14 @@ struct BalanceInformationCard: View {
             
             Spacer()
             
-            Image(systemName: "eye.slash.fill")
+            Image(systemName: showBalance ? "eye.slash.fill" : "eye.fill")
                 .resizable()
                 .scaledToFit()
                 .frame(height: 18)
                 .foregroundColor(.tertiaryLabel)
+                .onTapGesture {
+                    showBalance.toggle()
+                }
         }
         .padding()
         .frame(maxWidth: .infinity)

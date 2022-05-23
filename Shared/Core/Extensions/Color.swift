@@ -9,9 +9,10 @@ import SwiftUI
 import UIKit
 
 extension Color {
-    // MARK: - Main Colors
+    // MARK: - Custom Colors
     static let accentColor = Color("AccentColor")
     static let secondaryColor = Color("SecondaryColor")
+    static let gold = Color(hex: 0xFFBA33)
 
     // MARK: - Text Colors
     static let lightText = Color(UIColor.lightText)

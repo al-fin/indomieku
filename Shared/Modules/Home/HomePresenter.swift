@@ -21,9 +21,9 @@ final class HomePresenter: HomePresenterProtocol, ObservableObject {
     
     let appState = AppState.shared
     
-    let products: [Product] = Array(1...5).map { item in
+    let products: [Product] = Array(1...5).map { i in
         Product(
-            id: item,
+            id: i,
             images: ["mie"],
             name: "Indomie Goreng",
             price: 30000,
@@ -48,7 +48,6 @@ final class HomePresenter: HomePresenterProtocol, ObservableObject {
     ]
     
     let banners: [String] = Array(1...5).map { "\($0)-banner" }
-
     
     @Published internal var keyword = ""
 

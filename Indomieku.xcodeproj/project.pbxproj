@@ -17,6 +17,9 @@
 		A12B61E0282F3E7200A94C86 /* ButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12B61DF282F3E7200A94C86 /* ButtonStyle.swift */; };
 		A12B61E2282F3E9400A94C86 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12B61E1282F3E9400A94C86 /* CustomTextField.swift */; };
 		A12B61E5282F3EC500A94C86 /* LabelledDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = A12B61E4282F3EC500A94C86 /* LabelledDivider.swift */; };
+		A14A11452839E73200C9A467 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A11442839E73200C9A467 /* Notification.swift */; };
+		A14A11472839E8D700C9A467 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A11462839E8D700C9A467 /* String.swift */; };
+		A14A11492839F35100C9A467 /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = A14A11482839F35100C9A467 /* Date.swift */; };
 		A1564CE128335ED1007644B9 /* NavBarPreferenceKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1564CDB28335ED0007644B9 /* NavBarPreferenceKeys.swift */; };
 		A1564CE228335ED1007644B9 /* NavBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1564CDC28335ED0007644B9 /* NavBarView.swift */; };
 		A1564CE328335ED1007644B9 /* NavView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1564CDD28335ED1007644B9 /* NavView.swift */; };
@@ -70,6 +73,10 @@
 		A1A34CBC282A61B300D6C0B7 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A34CBA282A61B300D6C0B7 /* Color.swift */; };
 		A1A34CBE282A661E00D6C0B7 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A34CBD282A661E00D6C0B7 /* Theme.swift */; };
 		A1A34CBF282A661E00D6C0B7 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A34CBD282A661E00D6C0B7 /* Theme.swift */; };
+		A1CB5E8F283A37BB0004E259 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB5E8E283A37BB0004E259 /* Transaction.swift */; };
+		A1CB5E91283A40500004E259 /* NotificationType.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB5E90283A40500004E259 /* NotificationType.swift */; };
+		A1CB5E93283A41E30004E259 /* TransactionStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB5E92283A41E30004E259 /* TransactionStatus.swift */; };
+		A1CB5E95283A467D0004E259 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1CB5E94283A467D0004E259 /* Rating.swift */; };
 		A1DDFC0B28389F5E00280F84 /* Badge.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DDFC0A28389F5E00280F84 /* Badge.swift */; };
 		A1DDFC0D28389F8200280F84 /* BalanceInformationCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DDFC0C28389F8200280F84 /* BalanceInformationCard.swift */; };
 		A1DDFC0F28389F9D00280F84 /* ProductCategories.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1DDFC0E28389F9D00280F84 /* ProductCategories.swift */; };
@@ -99,6 +106,9 @@
 		A12B61DF282F3E7200A94C86 /* ButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonStyle.swift; sourceTree = "<group>"; };
 		A12B61E1282F3E9400A94C86 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		A12B61E4282F3EC500A94C86 /* LabelledDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelledDivider.swift; sourceTree = "<group>"; };
+		A14A11442839E73200C9A467 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		A14A11462839E8D700C9A467 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		A14A11482839F35100C9A467 /* Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		A1564CDB28335ED0007644B9 /* NavBarPreferenceKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBarPreferenceKeys.swift; sourceTree = "<group>"; };
 		A1564CDC28335ED0007644B9 /* NavBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavBarView.swift; sourceTree = "<group>"; };
 		A1564CDD28335ED1007644B9 /* NavView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavView.swift; sourceTree = "<group>"; };
@@ -151,6 +161,10 @@
 		A1A34CB7282A60CC00D6C0B7 /* Font.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
 		A1A34CBA282A61B300D6C0B7 /* Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		A1A34CBD282A661E00D6C0B7 /* Theme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
+		A1CB5E8E283A37BB0004E259 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		A1CB5E90283A40500004E259 /* NotificationType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationType.swift; sourceTree = "<group>"; };
+		A1CB5E92283A41E30004E259 /* TransactionStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionStatus.swift; sourceTree = "<group>"; };
+		A1CB5E94283A467D0004E259 /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
 		A1DDFC0A28389F5E00280F84 /* Badge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Badge.swift; sourceTree = "<group>"; };
 		A1DDFC0C28389F8200280F84 /* BalanceInformationCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BalanceInformationCard.swift; sourceTree = "<group>"; };
 		A1DDFC0E28389F9D00280F84 /* ProductCategories.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductCategories.swift; sourceTree = "<group>"; };
@@ -211,6 +225,7 @@
 				A1DDFC1228389FC400280F84 /* Countdown.swift */,
 				A1DDFC1428389FD800280F84 /* ProductCard.swift */,
 				A1DDFC192838A9C800280F84 /* SaleProgress.swift */,
+				A1CB5E94283A467D0004E259 /* Rating.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -329,6 +344,8 @@
 				A17B6220282BCFEE00657323 /* User.swift */,
 				A18E07F82835F71500A1269A /* ProductCategory.swift */,
 				A1DDFC1B2838AEC400280F84 /* Product.swift */,
+				A14A11442839E73200C9A467 /* Notification.swift */,
+				A1CB5E8E283A37BB0004E259 /* Transaction.swift */,
 			);
 			path = Entities;
 			sourceTree = "<group>";
@@ -440,9 +457,13 @@
 				A1A34CB7282A60CC00D6C0B7 /* Font.swift */,
 				A1A34CBA282A61B300D6C0B7 /* Color.swift */,
 				A1A34CBD282A661E00D6C0B7 /* Theme.swift */,
+				A1CB5E90283A40500004E259 /* NotificationType.swift */,
+				A1CB5E92283A41E30004E259 /* TransactionStatus.swift */,
 				A1052E5C2832664F002A3E4A /* View.swift */,
 				A101116428367F1D005F772F /* UIApplication.swift */,
 				A1927B10283922AC0073F108 /* Int.swift */,
+				A14A11462839E8D700C9A467 /* String.swift */,
+				A14A11482839F35100C9A467 /* Date.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -564,6 +585,7 @@
 				A1564CE528335ED1007644B9 /* NavBarContainerView.swift in Sources */,
 				A169D35E282FCBBD00A43547 /* PINPresenter.swift in Sources */,
 				A166AD472831FB820001DBDD /* TransactionView.swift in Sources */,
+				A14A11452839E73200C9A467 /* Notification.swift in Sources */,
 				A1A34CBB282A61B300D6C0B7 /* Color.swift in Sources */,
 				A1564CE628335ED1007644B9 /* NavLink.swift in Sources */,
 				A166AD522831FB820001DBDD /* ProfileInteractor.swift in Sources */,
@@ -579,6 +601,7 @@
 				A1DDFC182838A6D000280F84 /* Navigation.swift in Sources */,
 				A166AD482831FB820001DBDD /* TransactionPresenter.swift in Sources */,
 				A166AD592831FE8C0001DBDD /* AppInteractor.swift in Sources */,
+				A1CB5E95283A467D0004E259 /* Rating.swift in Sources */,
 				A1564CE928335F8F007644B9 /* NavItem.swift in Sources */,
 				A1564CE428335ED1007644B9 /* ExampleNavigation.swift in Sources */,
 				A103BC34282BFA110058B062 /* HomeInteractor.swift in Sources */,
@@ -595,13 +618,18 @@
 				A1182979282BEAD9007BFDF0 /* LoginPresenter.swift in Sources */,
 				A18E07F92835F71500A1269A /* ProductCategory.swift in Sources */,
 				A17B6225282BD24500657323 /* LoginInteractor.swift in Sources */,
+				A1CB5E93283A41E30004E259 /* TransactionStatus.swift in Sources */,
+				A14A11472839E8D700C9A467 /* String.swift in Sources */,
 				A1927B0D283912E80073F108 /* ProductsOverview.swift in Sources */,
 				A1927B0B2839118C0073F108 /* FlashSale.swift in Sources */,
+				A14A11492839F35100C9A467 /* Date.swift in Sources */,
 				A1927B09283910FB0073F108 /* HomeNavBar.swift in Sources */,
 				A1A34CA2282A5C9800D6C0B7 /* IndomiekuApp.swift in Sources */,
 				A190ED3B28328B9C001CE94A /* BottomNavigation.swift in Sources */,
 				A169D364282FEA8100A43547 /* GridStack.swift in Sources */,
 				A12B61E2282F3E9400A94C86 /* CustomTextField.swift in Sources */,
+				A1CB5E8F283A37BB0004E259 /* Transaction.swift in Sources */,
+				A1CB5E91283A40500004E259 /* NotificationType.swift in Sources */,
 				A166AD582831FE8C0001DBDD /* AppView.swift in Sources */,
 				A17B622B282BE5E900657323 /* Config.swift in Sources */,
 				A1564CEB28335FD9007644B9 /* BottomNavigationItem.swift in Sources */,

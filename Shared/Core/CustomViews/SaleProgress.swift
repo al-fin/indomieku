@@ -25,7 +25,6 @@ struct SaleProgress: View {
         self.height = height
     }
     
-    
     var body: some View {
         GeometryReader { metrics in
             ZStack(alignment: .bottomLeading) {
@@ -38,7 +37,7 @@ struct SaleProgress: View {
                         .fill(
                             LinearGradient(
                                 gradient: Gradient(
-                                    colors: [Color(hex: 0xFF9393), Color(hex: 0xF85D5D)]
+                                    colors: [Color(hex: 0xFF8E8E), Color(hex: 0xF85D5D)]
                                 ),
                                 startPoint: .leading,
                                 endPoint: .trailing

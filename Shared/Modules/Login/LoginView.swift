@@ -56,7 +56,7 @@ struct LoginView: View {
 
                 VStack(spacing: 20) {
                     Button(presenter.isLoading ? "Loading..." : "Masuk", action: presenter.onLoginTapped)
-                        .buttonStyle(PrimaryButton())
+                        .buttonStyle(SecondaryButton())
 
                     LabelledDivider("Belum punya akun?")
                     
