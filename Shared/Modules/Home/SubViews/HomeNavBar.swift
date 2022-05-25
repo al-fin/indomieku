@@ -20,22 +20,44 @@ struct HomeNavBar: View {
                 iconSource: .assets
             )
             
-            Image("icon.cart")
-                .renderingMode(.template)
-                .resizable()
-                .scaledToFit()
-                .frame(height: 28)
-                .foregroundColor(.tertiarySystemBackground)
-                .shadow(color: Color.black.opacity(0.1), radius: 4, x: 0, y: 2)
-                .overlay(Badge(count: 3))
+            NavLink(
+                destination:
+                    CartView(
+                    presenter: CartPresenter(
+                        interactor: CartInteractor()
+                    ),
+                    inTabView: false
+                )
+                .navBarTitle("Keranjang")
+            ) {
+                Image("icon.cart")
+                    .renderingMode(.template)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 28)
+                    .foregroundColor(.tertiarySystemBackground)
+                    .shadow(color: Color.black.opacity(0.1), radius: 4, x: 0, y: 2)
+                    .overlay(Badge(count: 3))
+            }
             
-            Image("icon.notification")
-                .renderingMode(.template)
-                .resizable()
-                .scaledToFit()
-                .frame(height: 28)
-                .foregroundColor(.tertiarySystemBackground)
-                .shadow(color: Color.black.opacity(0.1), radius: 4, x: 0, y: 2)
+            NavLink(
+                destination:
+                    NotificationView(
+                        presenter: NotificationPresenter(
+                            interactor: NotificationInteractor()
+                        )
+                    )
+                    .navBarTitle("Notifikasi")
+
+            ) {
+                Image("icon.notification")
+                    .renderingMode(.template)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 28)
+                    .foregroundColor(.tertiarySystemBackground)
+                    .shadow(color: Color.black.opacity(0.1), radius: 4, x: 0, y: 2)
+            }
         }
     }
 }

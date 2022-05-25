@@ -14,7 +14,7 @@ struct Banners: View {
     @State private var activeBanner = "1-banner"
     
     var body: some View {
-        Group {
+        VStack {
             TabView(selection: $activeBanner.animation()) {
                 ForEach(banners, id: \.self) { banner in
                     Image(banner)
@@ -32,7 +32,7 @@ struct Banners: View {
                 }
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-            .frame(height: 200)
+            .frame(height: 175)
             
             HStack {
                 ForEach(banners, id: \.self) { banner in

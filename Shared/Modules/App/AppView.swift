@@ -13,21 +13,9 @@ struct AppView: View {
     var body: some View {
         TabView(selection: $presenter.appState.bottomNavigation.animation()) {
             ForEach(Navigation.NAVIGATION_ITEMS, id: \.name) { item in
-                ScrollView(.vertical, showsIndicators: false) {
                     item.view
                         .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .padding(.bottom, UIApplication.shared.windows.first!.safeAreaInsets.bottom )
-                }
-                .tag(item.name)
-                .edgesIgnoringSafeArea(.top)
-                .background(Color.systemBackground)
-                // status bar :
-                .overlay(alignment: .top) {
-                    Color.clear
-                        .background(.thinMaterial)
-                        .edgesIgnoringSafeArea(.top)
-                        .frame(height: 0) // -> constraint to above safe area
-                }
+                        .tag(item.name)
             }
         }
         .ignoresSafeArea()
@@ -43,7 +31,7 @@ struct AppView: View {
             .navigationBarHidden(true)
             .navBarTitle(presenter.appState.bottomNavigation)
             .navBarBackButtonHidden(true)
-            .navBarHidden(["Home"].contains(presenter.appState.bottomNavigation))
+            .navBarHidden(["Home", "Profile"].contains(presenter.appState.bottomNavigation))
         }
     }
 }

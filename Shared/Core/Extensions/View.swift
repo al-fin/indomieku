@@ -28,9 +28,9 @@ extension View {
     }
     
     // border with corner radius
-    func border(width: CGFloat, cornerRadius: Double, color: Color) -> some View {
+    func border(width: CGFloat, cornerRadius: Double = 16, color: Color) -> some View {
         overlay(
-           RoundedRectangle(cornerRadius: 16)
+           RoundedRectangle(cornerRadius: cornerRadius)
                .stroke(color, lineWidth: width)
        )
     }

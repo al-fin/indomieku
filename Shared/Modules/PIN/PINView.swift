@@ -21,10 +21,17 @@ struct PINView: View {
             .ignoresSafeArea()
             
             VStack(spacing: 20) {
-                Image("lock")
+                Image("icon.lock")
                     .resizable()
+                    .renderingMode(.template)
+                    .foregroundColor(.white)
                     .scaledToFit()
-                    .frame(height: 50)
+                    .frame(width: 28, height: 28)
+                    .padding(12)
+                    .background(Color.white.opacity(0.15))
+                    .cornerRadius(50)
+                    .border(width: 1, cornerRadius: 50, color: Color.white)
+                    .padding(.top, 20)
                 
                 VStack {
                     Text("Autentikasi Pembayaran")
@@ -80,6 +87,12 @@ struct PINView: View {
 
 struct PINView_Previews: PreviewProvider {
     static var previews: some View {
-        PINView(presenter: PINPresenter(interactor: PINInteractor()))
+        @State var showPINView = true
+        return PINView(
+            presenter: PINPresenter(
+                interactor: PINInteractor(),
+                isPresented: $showPINView
+            )
+        )
     }
 }

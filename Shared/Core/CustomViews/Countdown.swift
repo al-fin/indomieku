@@ -9,7 +9,7 @@ import SwiftUI
 
 struct Countdown: View {
     var body: some View {
-        Group {
+        HStack(spacing: 4) {
             Text("00")
                 .font(.headline.weight(.bold))
                 .foregroundColor(.secondarySystemBackground)

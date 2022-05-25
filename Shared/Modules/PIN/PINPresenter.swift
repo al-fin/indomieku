@@ -15,6 +15,7 @@ protocol PINPresenterProtocol {
 
     var pin: String { get }
     var isLoading: Bool { get }
+    var isPresented: Binding<Bool> { get }
 
     func onInputPIN(_ num: Int)
     func onDeletePIN()
@@ -23,17 +24,22 @@ protocol PINPresenterProtocol {
 final class PINPresenter: PINPresenterProtocol, ObservableObject {
     internal let interactor: PINInteractor
     internal var cancellables = Set<AnyCancellable>()
-
+    
+    var isPresented: Binding<Bool>
+    
     @Published var pin = ""
     @Published var isLoading = false
-
-    init(interactor: PINInteractor) {
-        self.interactor = interactor
         
+    init(interactor: PINInteractor, isPresented: Binding<Bool>) {
+        self.interactor = interactor
+        self.isPresented = isPresented
+
         $pin
             .filter { $0.count == 6 }
-            .sink(receiveValue: { value in
+            .sink(receiveValue: { [weak self] value in
                 print(value)
+                
+                self?.isPresented.wrappedValue = false
             })
             .store(in: &cancellables)
     }

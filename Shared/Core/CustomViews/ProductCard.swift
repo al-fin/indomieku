@@ -21,9 +21,12 @@ struct ProductCard: View {
             VStack(alignment: .leading) {
                 HStack(alignment: .top) {
                     VStack(alignment: .leading) {
-                        Text(Int(Double(product.price) - (Double(product.price) * Double(Double(product.discount)/100.0))).formattedCurrency)
-                            .font(.title3.weight(.bold))
-                            .foregroundColor(.accentColor)
+                        Text(
+                            (product.price - (product.price * (product.discount/100.0)))
+                                .formattedCurrency
+                        )
+                        .font(.title3.weight(.bold))
+                        .foregroundColor(.accentColor)
                         
                         if product.discount > 0 {
                             Text(product.price.formattedCurrency)
@@ -36,7 +39,7 @@ struct ProductCard: View {
                     Spacer()
                     
                     if product.discount > 0 {
-                        Text("\(product.discount)%")
+                        Text("\(Int(product.discount))%")
                             .font(.caption.weight(.regular))
                             .foregroundColor(.accentColor)
                             .padding(.vertical, 4)

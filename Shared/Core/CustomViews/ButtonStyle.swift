@@ -7,12 +7,22 @@
 
 import SwiftUI
 
+enum ButtonSize: String {
+    case small, normal
+}
+
 struct AccentButton: ButtonStyle {
+    var size: ButtonSize
+    
+    init(size: ButtonSize = .normal) {
+        self.size = size
+    }
+    
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
-            .font(.caption.weight(.bold))
-            .padding(.vertical, 6)
-            .padding(.horizontal, 12)
+            .font(size == .small ? .caption.weight(.bold) : .body.weight(.bold))
+            .padding(.vertical, size == .small ? 6 : 9)
+            .padding(.horizontal, size == .small ? 12 : 15)
             .background(
                 LinearGradient(
                     gradient: Gradient(
