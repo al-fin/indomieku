@@ -11,28 +11,28 @@ struct AppView: View {
     @ObservedObject var presenter: AppPresenter
         
     var body: some View {
-        TabView(selection: $presenter.appState.bottomNavigation.animation()) {
-            ForEach(Navigation.NAVIGATION_ITEMS, id: \.name) { item in
-                    item.view
-                        .frame(maxWidth: .infinity, maxHeight: .infinity)
-                        .tag(item.name)
+        VStack(spacing: 0) {
+            TabView(selection: $presenter.appState.bottomNavigation.animation()) {
+                ForEach(Navigation.NAVIGATION_ITEMS, id: \.name) { item in
+                        item.view
+                            .frame(maxWidth: .infinity, maxHeight: .infinity)
+                            .tag(item.name)
+                }
             }
-        }
-        .ignoresSafeArea()
-        .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
-        .navigationTitle("")
-        .navigationBarHidden(true)
-        .safeAreaInset(edge: .bottom) {
+            .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
+            
             BottomNavigation(
                 selection: $presenter.appState.bottomNavigation,
                 items: Navigation.NAVIGATION_ITEMS
             )
-            .navigationTitle(presenter.appState.bottomNavigation)
-            .navigationBarHidden(true)
-            .navBarTitle(presenter.appState.bottomNavigation)
-            .navBarBackButtonHidden(true)
-            .navBarHidden(["Home", "Profile"].contains(presenter.appState.bottomNavigation))
         }
+        .edgesIgnoringSafeArea(.top)
+        .navigationTitle(presenter.appState.bottomNavigation)
+        .navigationBarHidden(true)
+        .navBarTitle(presenter.appState.bottomNavigation)
+        .navBarBackButtonHidden(true)
+        .navBarHidden(["Home", "Profile"].contains(presenter.appState.bottomNavigation))
+        
     }
 }
 

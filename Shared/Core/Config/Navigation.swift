@@ -17,7 +17,7 @@ struct Navigation {
         NavItem(
             name: "Keranjang",
             icon: "icon.cart",
-            view: AnyView(CartView(presenter: CartPresenter(interactor: CartInteractor()), inTabView: true))
+            view: AnyView(CartView(presenter: CartPresenter(interactor: CartInteractor())))
         ),
         NavItem(
             name: "Notifikasi",

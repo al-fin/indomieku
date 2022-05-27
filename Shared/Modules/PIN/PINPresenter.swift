@@ -11,7 +11,6 @@ import Combine
 
 protocol PINPresenterProtocol {
     var interactor: PINInteractor { get }
-    var cancellables: Set<AnyCancellable> { get }
 
     var pin: String { get }
     var isLoading: Bool { get }

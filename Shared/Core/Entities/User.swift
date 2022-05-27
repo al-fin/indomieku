@@ -9,6 +9,9 @@ import Foundation
 
 struct User: Identifiable, Codable {
     var id: Int
+    var userID: String
     var name: String
     var email: String
+    var phone: String
+    var address: String
 }

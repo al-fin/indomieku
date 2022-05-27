@@ -22,8 +22,7 @@ struct ProductCard: View {
                 HStack(alignment: .top) {
                     VStack(alignment: .leading) {
                         Text(
-                            (product.price - (product.price * (product.discount/100.0)))
-                                .formattedCurrency
+                            product.totalPrice.formattedCurrency
                         )
                         .font(.title3.weight(.bold))
                         .foregroundColor(.accentColor)

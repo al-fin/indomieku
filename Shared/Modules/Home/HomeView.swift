@@ -23,18 +23,15 @@ struct HomeView: View {
     var body: some View {
         VStack(spacing: 0) {
             HomeNavBar(keyword: $presenter.keyword)
-                .padding(.horizontal)
-                .padding(.top, UIApplication.shared.windows.first!.safeAreaInsets.top )
-                .padding(.bottom)
+                .padding()
                 .background(
-                        LinearGradient(
-                            gradient: Gradient(
-                                colors: [Color(hex: 0xFF9393), Color(hex: 0xF85D5D)]
-                            ),
-                            startPoint: .top,
-                            endPoint: .bottom
-                        )
-                        .ignoresSafeArea()
+                    LinearGradient(
+                        gradient: Gradient(
+                            colors: [Color(hex: 0xFF9393), Color(hex: 0xF85D5D)]
+                        ),
+                        startPoint: .top,
+                        endPoint: .bottom
+                    )
                 )
             
             ScrollView(.vertical, showsIndicators: false) {
@@ -47,15 +44,15 @@ struct HomeView: View {
                             }
                             
                             BalanceInformationCard()
-                                .padding(.horizontal)
                                 .padding(.bottom)
+                                .padding(.horizontal)
                         }
                         
                         ProductCategories(
                             categories: presenter.categories
                         )
-                            .padding(.horizontal)
-                            .padding(.bottom)
+                        .padding(.bottom)
+                        .padding(.horizontal)
                     }
                     .background(Color.secondarySystemBackground)
                     .if(colorScheme == .dark) { view in
@@ -95,8 +92,6 @@ struct HomeView: View {
         .navigationTitle("")
         .navigationBarHidden(true)
         
-        .edgesIgnoringSafeArea(.top)
-        .padding(.bottom, UIApplication.shared.windows.first!.safeAreaInsets.bottom+Config.BOTTOM_NAVIGATION_HEIGHT)
         .background(offset >= 25 ? Color.systemBackground : Color.accentColor)
     }
 }

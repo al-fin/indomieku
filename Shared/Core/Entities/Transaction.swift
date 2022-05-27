@@ -15,7 +15,10 @@ struct Transaction {
     var id: Int
     var product: Product
     var quantity: Int
-    var totalPrice: Int
     var status: TransactionStatus
     var rating: Double?
+    
+    var totalPrice: Int {
+        product.totalPrice * quantity
+    }
 }

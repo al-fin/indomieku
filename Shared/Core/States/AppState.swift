@@ -17,7 +17,7 @@ protocol AppStateProtocol {
 }
 
 enum AppTheme: String {
-    case dark, light, system
+    case dark, light, auto
 }
 
 class AppState: ObservableObject, AppStateProtocol {

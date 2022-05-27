@@ -12,6 +12,8 @@ enum ButtonSize: String {
 }
 
 struct AccentButton: ButtonStyle {
+    @Environment(\.isEnabled) private var isEnabled: Bool
+
     var size: ButtonSize
     
     init(size: ButtonSize = .normal) {
@@ -26,13 +28,13 @@ struct AccentButton: ButtonStyle {
             .background(
                 LinearGradient(
                     gradient: Gradient(
-                        colors: [Color(hex: 0xFF8E8E), Color(hex: 0xF85D5D)]
+                        colors: !isEnabled ? [Color.label.opacity(0.15)] : [Color(hex: 0xFF8E8E), Color(hex: 0xF85D5D)]
                     ),
                     startPoint: .top,
                     endPoint: .bottom
                 )
             )
-            .foregroundColor(Color.secondarySystemBackground)
+            .foregroundColor(!isEnabled ? Color.tertiaryLabel : Color.secondarySystemBackground)
             .cornerRadius(8)
             .opacity(configuration.isPressed ? 0.5 : 1)
     }

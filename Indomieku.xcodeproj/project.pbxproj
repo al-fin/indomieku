@@ -51,6 +51,8 @@
 		A169D362282FEA5200A43547 /* PINDots.swift in Sources */ = {isa = PBXBuildFile; fileRef = A169D361282FEA5200A43547 /* PINDots.swift */; };
 		A169D364282FEA8100A43547 /* GridStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = A169D363282FEA8100A43547 /* GridStack.swift */; };
 		A169D366282FEC3700A43547 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A169D365282FEC3700A43547 /* LoadingView.swift */; };
+		A17530AE2840CB1900F676DF /* PersonalInformation.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17530AD2840CB1900F676DF /* PersonalInformation.swift */; };
+		A17530B02840E78300F676DF /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17530AF2840E78300F676DF /* Item.swift */; };
 		A17B6221282BCFEE00657323 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17B6220282BCFEE00657323 /* User.swift */; };
 		A17B6225282BD24500657323 /* LoginInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17B6224282BD24500657323 /* LoginInteractor.swift */; };
 		A17B6228282BD9E100657323 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = A17B6227282BD9E100657323 /* APIManager.swift */; };
@@ -145,6 +147,8 @@
 		A169D361282FEA5200A43547 /* PINDots.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PINDots.swift; sourceTree = "<group>"; };
 		A169D363282FEA8100A43547 /* GridStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridStack.swift; sourceTree = "<group>"; };
 		A169D365282FEC3700A43547 /* LoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		A17530AD2840CB1900F676DF /* PersonalInformation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalInformation.swift; sourceTree = "<group>"; };
+		A17530AF2840E78300F676DF /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		A17B6220282BCFEE00657323 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		A17B6224282BD24500657323 /* LoginInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginInteractor.swift; sourceTree = "<group>"; };
 		A17B6227282BD9E100657323 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
@@ -311,6 +315,7 @@
 				A166AD462831FB820001DBDD /* ProfileInteractor.swift */,
 				A166AD442831FB820001DBDD /* ProfilePresenter.swift */,
 				A166AD452831FB820001DBDD /* ProfileView.swift */,
+				A17530AC2840CAF300F676DF /* SubViews */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -333,6 +338,22 @@
 				A169D35F282FCBD200A43547 /* PINView.swift */,
 			);
 			path = PIN;
+			sourceTree = "<group>";
+		};
+		A17530AC2840CAF300F676DF /* SubViews */ = {
+			isa = PBXGroup;
+			children = (
+				A17530AD2840CB1900F676DF /* PersonalInformation.swift */,
+			);
+			path = SubViews;
+			sourceTree = "<group>";
+		};
+		A17530B12840EBB900F676DF /* States */ = {
+			isa = PBXGroup;
+			children = (
+				A169D358282FC30500A43547 /* AppState.swift */,
+			);
+			path = States;
 			sourceTree = "<group>";
 		};
 		A17B6219282BCF0B00657323 /* Modules */ = {
@@ -364,6 +385,7 @@
 			isa = PBXGroup;
 			children = (
 				A17B6220282BCFEE00657323 /* User.swift */,
+				A17530AF2840E78300F676DF /* Item.swift */,
 				A18E07F82835F71500A1269A /* ProductCategory.swift */,
 				A1DDFC1B2838AEC400280F84 /* Product.swift */,
 				A14A11442839E73200C9A467 /* Notification.swift */,
@@ -386,7 +408,6 @@
 			isa = PBXGroup;
 			children = (
 				A17B622A282BE5E900657323 /* Config.swift */,
-				A169D358282FC30500A43547 /* AppState.swift */,
 				A1DDFC172838A6D000280F84 /* Navigation.swift */,
 			);
 			path = Config;
@@ -469,6 +490,7 @@
 				A17B621B282BCF7700657323 /* Entities */,
 				A17B6229282BE5D200657323 /* Config */,
 				A17B6226282BD9AE00657323 /* Managers */,
+				A17530B12840EBB900F676DF /* States */,
 				A1A34CB6282A60B200D6C0B7 /* Extensions */,
 			);
 			path = Core;
@@ -618,10 +640,12 @@
 				A1564CE328335ED1007644B9 /* NavView.swift in Sources */,
 				A18CF385283B1D890098F930 /* CheckBox.swift in Sources */,
 				A169D362282FEA5200A43547 /* PINDots.swift in Sources */,
+				A17530B02840E78300F676DF /* Item.swift in Sources */,
 				A103BC36282BFA110058B062 /* HomeView.swift in Sources */,
 				A166AD4E2831FB820001DBDD /* CartInteractor.swift in Sources */,
 				A166AD572831FE8C0001DBDD /* AppPresenter.swift in Sources */,
 				A1DDFC1128389FB000280F84 /* Banners.swift in Sources */,
+				A17530AE2840CB1900F676DF /* PersonalInformation.swift in Sources */,
 				A1564CE528335ED1007644B9 /* NavBarContainerView.swift in Sources */,
 				A169D35E282FCBBD00A43547 /* PINPresenter.swift in Sources */,
 				A166AD472831FB820001DBDD /* TransactionView.swift in Sources */,

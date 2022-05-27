@@ -25,8 +25,7 @@ struct HomeNavBar: View {
                     CartView(
                     presenter: CartPresenter(
                         interactor: CartInteractor()
-                    ),
-                    inTabView: false
+                    )
                 )
                 .navBarTitle("Keranjang")
             ) {
