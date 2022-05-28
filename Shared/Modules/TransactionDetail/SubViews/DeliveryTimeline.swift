@@ -8,49 +8,55 @@
 import SwiftUI
 
 struct DeliveryTimeline: View {
-    var body: some View {
-        VStack {
-            ForEach(0..<4) { i in
-                DeliveryTimelineItem(
-                    deliveryTracking: DeliveryTracking(type: .paid, date: "2022-05-01T12:00:00".convertToDate())
-                )
-            }
-        }
-    }
-}
-
-struct DeliveryTimelineItem: View {
-    var deliveryTracking: DeliveryTracking
+    var trackings: [DeliveryTracking]
+    
+    @Environment(\.colorScheme) var colorScheme
     
     var body: some View {
-        HStack(alignment: .top, spacing: 10) {
-            Image(deliveryTracking.icon)
-                .resizable()
-                .frame(width: 40, height: 40)
-                .clipShape(Circle())
-                .border(width: 2, cornerRadius: 20, color: .accentColor)
-            
-            VStack(alignment: .leading) {
-                HStack(alignment: .bottom) {
-                    Text(deliveryTracking.date.formattedDate())
-                        .font(.body.weight(.bold))
-                        .foregroundColor(.label)
+        VStack(alignment: .leading, spacing: 0) {
+            ForEach(0..<trackings.count) { i in
+                let tracking = trackings[i]
+                
+                HStack(alignment: .top, spacing: 10) {
+                    ZStack(alignment: .top) {
+                        if i != trackings.count-1 {
+                            DashedLine()
+                                .stroke(style: StrokeStyle(lineWidth: 1, dash: [5]))
+                                .fill(Color.accentColor)
+                                .frame(width: 1, height: 60)
+                        }
+                        
+                        Image(tracking.icon)
+                            .resizable()
+                            .renderingMode(.template)
+                            .foregroundColor(.accentColor)
+                            .scaledToFit()
+                            .frame(width: 16, height: 16)
+                            .padding(8)
+                            .background(colorScheme == .dark ? Color(hex: 0x5C3445) : Color(hex: 0xFDD7D7))
+                            .cornerRadius(16)
+                            .border(width: 1, cornerRadius: 16, color: Color.accentColor)
+                    }
                     
-                    Text(deliveryTracking.date.formattedDate())
-                        .font(.caption.weight(.light))
-                        .foregroundColor(.secondaryLabel)
+                    VStack(alignment: .leading) {
+                        HStack(alignment: .bottom) {
+                            Text(tracking.date.getDate())
+                                .font(.body.weight(.bold))
+                                .foregroundColor(.label)
+                            
+                            Text(tracking.date.getTime())
+                                .font(.caption.weight(.light))
+                                .foregroundColor(.secondaryLabel)
+                        }
+                        
+                        Spacer().frame(height: 5)
+                        
+                        Text(tracking.description)
+                            .font(.body.weight(.light))
+                            .foregroundColor(.label)
+                    }
                 }
-                
-                Spacer().frame(height: 5)
-                
-                Text(deliveryTracking.description)
-                    .font(.body.weight(.light))
-                    .foregroundColor(.label)
-                                
-                Spacer()
             }
         }
-        .padding(.vertical, 5)
     }
 }
-

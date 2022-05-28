@@ -24,7 +24,7 @@ struct Delivery {
     var trackingID: String
     var courier: String
     var price: Int
-    var tracking: [DeliveryTracking]
+    var trackings: [DeliveryTracking]
 }
 
 struct Transaction {

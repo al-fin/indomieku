@@ -52,22 +52,11 @@ struct DeliveryInformation: View {
                 }
             }
             
-            // timeline
-            
-            VLine()
-                .stroke(style: StrokeStyle(lineWidth: 1, dash: [10]))
-                .frame(width: 1, height: 100)
+            Spacer().frame(height: 10)
+                        
+            DeliveryTimeline(
+                trackings: transaction.delivery.trackings
+            )
         }
-    }
-}
-
-
-
-struct VLine: Shape {
-    func path(in rect: CGRect) -> Path {
-        var path = Path()
-        path.move(to: CGPoint(x: 0, y: 0))
-        path.addLine(to: CGPoint(x: 0, y: rect.height))
-        return path
     }
 }

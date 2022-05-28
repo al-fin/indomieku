@@ -13,27 +13,21 @@ struct ContentView: View {
     var body: some View {
         NavView {
             VStack {
-//                if appState.isAuthenticated {
-//                    AppView(
-//                        presenter: AppPresenter(
-//                            interactor: AppInteractor()
-//                        )
-//                    )
-//                    .transition(.slide)
-//                } else {
-//                    LoginView(
-//                        presenter: LoginPresenter(
-//                            interactor: LoginInteractor()
-//                        )
-//                    )
-//                    .transition(.slide)
-//                }
-                
-                TransactionDetailView(
-                    presenter: TransactionDetailPresenter(
-                        interactor: TransactionDetailInteractor()
+                if appState.isAuthenticated {
+                    AppView(
+                        presenter: AppPresenter(
+                            interactor: AppInteractor()
+                        )
                     )
-                )
+                    .transition(.slide)
+                } else {
+                    LoginView(
+                        presenter: LoginPresenter(
+                            interactor: LoginInteractor()
+                        )
+                    )
+                    .transition(.slide)
+                }
             }
         }
     }

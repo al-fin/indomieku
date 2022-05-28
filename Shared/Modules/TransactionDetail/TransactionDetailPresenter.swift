@@ -40,7 +40,12 @@ final class TransactionDetailPresenter: TransactionDetailPresenterProtocol, Obse
             trackingID: "00122039122",
             courier: "Sicepat",
             price: 20000,
-            tracking: []
+            trackings: [
+                DeliveryTracking(type: .paid, date: "2022-05-01T12:00:00".convertToDate()),
+                DeliveryTracking(type: .cooking, date: "2022-05-01T13:00:00".convertToDate()),
+                DeliveryTracking(type: .shipped, date: "2022-05-01T14:00:00".convertToDate()),
+                DeliveryTracking(type: .done, date: "2022-05-01T15:00:00".convertToDate())
+            ]
         ),
         paymentMethod: "iFoodPay",
         paidAt: "2022-05-01T12:00:00".convertToDate()
