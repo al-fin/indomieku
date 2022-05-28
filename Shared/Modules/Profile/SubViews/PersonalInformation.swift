@@ -15,8 +15,7 @@ struct PersonalInformation: View {
             ForEach(0..<items.count) { i in
                 let item = items[i]
                 if i != 0 {
-                    Divider()
-                        .background(Color.tertiaryLabel)
+                    Divider().background(Color.tertiaryLabel)
                 }
 
                 HStack(alignment: .top) {

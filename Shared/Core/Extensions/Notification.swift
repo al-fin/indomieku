@@ -7,9 +7,9 @@
 
 import SwiftUI
 
-extension NotificationType {
+extension Notification {
     var icon: String {
-        switch self {
+        switch type {
         case .delivery:
             return "icon.delivery"
         case .payment:
@@ -20,7 +20,7 @@ extension NotificationType {
     }
     
     var color: Color {
-        switch self {
+        switch type {
         case .delivery:
             return Color(hex: 0xFFBA33)
         case .payment:

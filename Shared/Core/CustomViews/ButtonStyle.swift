@@ -40,6 +40,29 @@ struct AccentButton: ButtonStyle {
     }
 }
 
+
+struct OutlinedButton: ButtonStyle {
+    @Environment(\.isEnabled) private var isEnabled: Bool
+
+    var size: ButtonSize
+    
+    init(size: ButtonSize = .normal) {
+        self.size = size
+    }
+    
+    func makeBody(configuration: Configuration) -> some View {
+        configuration.label
+            .font(size == .small ? .caption.weight(.bold) : .body.weight(.bold))
+            .padding(.vertical, size == .small ? 6 : 9)
+            .padding(.horizontal, size == .small ? 12 : 15)
+            .background(Color.clear)
+            .foregroundColor(!isEnabled ? Color.tertiaryLabel : Color.accentColor)
+            .cornerRadius(8)
+            .border(width: 1.5, cornerRadius: 8, color: !isEnabled ? Color.tertiaryLabel : Color.accentColor)
+            .opacity(configuration.isPressed ? 0.5 : 1)
+    }
+}
+
 struct SecondaryButton: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label

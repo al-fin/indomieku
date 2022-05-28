@@ -12,10 +12,10 @@ struct NotificationRow: View {
     
     var body: some View {
         HStack(alignment: .top, spacing: 10) {
-            Image(notification.type.icon)
+            Image(notification.icon)
                 .resizable()
                 .renderingMode(.template)
-                .foregroundColor(notification.type.color)
+                .foregroundColor(notification.color)
                 .frame(width: 24, height: 24)
             
             VStack(alignment: .leading, spacing: 5) {

@@ -12,76 +12,82 @@ struct ProductCard: View {
     var isFlashSale: Bool
     
     var body: some View {
-        VStack(spacing: 0) {
-            Image(product.images[0])
-                .resizable()
-                .aspectRatio(contentMode: .fill)
-                .frame(height: 150)
-            
-            VStack(alignment: .leading) {
-                HStack(alignment: .top) {
-                    VStack(alignment: .leading) {
-                        Text(
-                            product.totalPrice.formattedCurrency
-                        )
-                        .font(.title3.weight(.bold))
-                        .foregroundColor(.accentColor)
+        NavLink(destination: ProductDetailView(
+            presenter: ProductDetailPresenter(
+                interactor: ProductDetailInteractor()
+            )
+        )) {
+            VStack(spacing: 0) {
+                Image(product.images[0])
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
+                    .frame(height: 150)
+                
+                VStack(alignment: .leading) {
+                    HStack(alignment: .top) {
+                        VStack(alignment: .leading) {
+                            Text(
+                                product.totalPrice.formattedCurrency
+                            )
+                                .font(.title3.weight(.bold))
+                                .foregroundColor(.accentColor)
+                            
+                            if product.discount > 0 {
+                                Text(product.price.formattedCurrency)
+                                    .font(.caption.weight(.light))
+                                    .foregroundColor(.secondaryLabel)
+                                    .strikethrough(color: .secondaryLabel)
+                            }
+                        }
+                        
+                        Spacer()
                         
                         if product.discount > 0 {
-                            Text(product.price.formattedCurrency)
-                                .font(.caption.weight(.light))
-                                .foregroundColor(.secondaryLabel)
-                                .strikethrough(color: .secondaryLabel)
+                            Text("\(Int(product.discount))%")
+                                .font(.caption.weight(.regular))
+                                .foregroundColor(.accentColor)
+                                .padding(.vertical, 4)
+                                .padding(.horizontal, 8)
+                                .background(Color.accentColor.opacity(0.15))
+                                .cornerRadius(8)
+                                .border(width: 1, cornerRadius: 8, color: Color.accentColor.opacity(0.5))
                         }
                     }
                     
+                    Text(product.name)
+                        .font(.title3.weight(.bold))
+                        .foregroundColor(.label)
+                    
                     Spacer()
                     
-                    if product.discount > 0 {
-                        Text("\(Int(product.discount))%")
-                            .font(.caption.weight(.regular))
-                            .foregroundColor(.accentColor)
-                            .padding(.vertical, 4)
-                            .padding(.horizontal, 8)
-                            .background(Color.accentColor.opacity(0.15))
-                            .cornerRadius(8)
-                            .border(width: 1, cornerRadius: 8, color: Color.accentColor.opacity(0.5))
+                    if isFlashSale {
+                        Group {
+                            SaleProgress(
+                                value: product.totalSold,
+                                min: 0,
+                                max: product.totalSold + product.stock
+                            )
+                            
+                            Text("Segera Habis")
+                                .font(.caption2.weight(.semibold))
+                                .foregroundColor(.accentColor)
+                        }
+                    } else {
+                        HStack(spacing: 4) {
+                            Image(systemName: "star.fill")
+                                .font(.caption)
+                                .foregroundColor(.gold)
+                            
+                            Text("\(product.rating, specifier: "%.1f")  |  \(product.totalSold) Terjual")
+                                .font(.caption.weight(.light))
+                                .foregroundColor(.secondaryLabel)
+                        }
                     }
                 }
-                
-                Text(product.name)
-                    .font(.title3.weight(.bold))
-                    .foregroundColor(.label)
-                
-                Spacer()
-                
-                if isFlashSale {
-                    Group {
-                        SaleProgress(
-                            value: product.totalSold,
-                            min: 0,
-                            max: product.totalSold + product.stock
-                        )
-                                                
-                        Text("Segera Habis")
-                            .font(.caption2.weight(.semibold))
-                            .foregroundColor(.accentColor)
-                    }
-                } else {
-                    HStack(spacing: 4) {
-                        Image(systemName: "star.fill")
-                            .font(.caption)
-                            .foregroundColor(.gold)
-                        
-                        Text("\(product.rating, specifier: "%.1f")  |  \(product.totalSold) Terjual")
-                            .font(.caption.weight(.light))
-                            .foregroundColor(.secondaryLabel)
-                    }
-                }
+                .padding()
+                .background(Color.secondarySystemBackground)
             }
-            .padding()
-            .background(Color.secondarySystemBackground)
+            .card()
         }
-        .card()
     }
 }

@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ViewOffsetKey: PreferenceKey {
+struct HomeOffsetKey: PreferenceKey {
     typealias Value = CGFloat
     static var defaultValue = CGFloat.zero
     static func reduce(value: inout Value, nextValue: () -> Value) {
@@ -79,11 +79,11 @@ struct HomeView: View {
                 }
                 .background(GeometryReader {
                     Color.systemBackground.preference(
-                        key: ViewOffsetKey.self,
+                        key: HomeOffsetKey.self,
                         value: -$0.frame(in: .named("home-scrollview")).origin.y
                     )
                 })
-                .onPreferenceChange(ViewOffsetKey.self) { y in
+                .onPreferenceChange(HomeOffsetKey.self) { y in
                     offset = y
                 }
             }
