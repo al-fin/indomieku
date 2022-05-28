@@ -11,11 +11,16 @@ struct TransactionRow: View {
     var transaction: Transaction
     
     var body: some View {
-        NavLink(destination: TransactionDetailView(
-            presenter: TransactionDetailPresenter(
-                interactor: TransactionDetailInteractor()
-            )
-        )) {
+        ZStack {
+            NavLink(destination: TransactionDetailView(
+                presenter: TransactionDetailPresenter(
+                    interactor: TransactionDetailInteractor()
+                )
+            )) {
+                EmptyView()
+            }
+            .opacity(0)
+            
             HStack(alignment: .top, spacing: 10) {
                 Image(transaction.product.images[0])
                     .resizable()

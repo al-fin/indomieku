@@ -34,7 +34,6 @@ class AppState: ObservableObject, AppStateProtocol {
 
     init() {
         self.isAuthenticated = UserDefaults.standard.bool(forKey: "isAuthenticated")
-        
         self.updateTheme()
     }
 

@@ -25,8 +25,8 @@ final class LoginPresenter: LoginPresenterProtocol, ObservableObject {
     internal let interactor: LoginInteractor
     internal var cancellables = Set<AnyCancellable>()
     
-    @Published var email = ""
-    @Published var password = ""
+    @Published var email = "chelsea.islan@icloud.com"
+    @Published var password = "chelsea123"
     @Published var isLoading = false
     
     let appState = AppState.shared

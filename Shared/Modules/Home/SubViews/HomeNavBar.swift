@@ -8,26 +8,20 @@
 import SwiftUI
 
 struct HomeNavBar: View {
-    var keyword: Binding<String>
+    @ObservedObject var presenter: HomePresenter
     
     var body: some View {
         HStack(spacing: 10) {
             CustomTextField(
                 label: "",
                 placeholder: "Cari mie favoritmu di sini...",
-                text: keyword,
+                text: $presenter.keyword,
                 startIcon: "icon.search",
                 iconSource: .assets
             )
             
             NavLink(
-                destination:
-                    CartView(
-                    presenter: CartPresenter(
-                        interactor: CartInteractor()
-                    )
-                )
-                .navBarTitle("Keranjang")
+                destination: presenter.cartView
             ) {
                 Image("icon.cart")
                     .renderingMode(.template)
@@ -40,14 +34,7 @@ struct HomeNavBar: View {
             }
             
             NavLink(
-                destination:
-                    NotificationView(
-                        presenter: NotificationPresenter(
-                            interactor: NotificationInteractor()
-                        )
-                    )
-                    .navBarTitle("Notifikasi")
-
+                destination: presenter.notificationView
             ) {
                 Image("icon.notification")
                     .renderingMode(.template)

@@ -11,6 +11,7 @@ struct ProductCard: View {
     var product: Product
     var isFlashSale: Bool
     
+        
     var body: some View {
         NavLink(destination: ProductDetailView(
             presenter: ProductDetailPresenter(
@@ -49,8 +50,8 @@ struct ProductCard: View {
                                 .padding(.vertical, 4)
                                 .padding(.horizontal, 8)
                                 .background(Color.accentColor.opacity(0.15))
-                                .cornerRadius(8)
-                                .border(width: 1, cornerRadius: 8, color: Color.accentColor.opacity(0.5))
+                                .cornerRadius(15)
+                                .border(width: 1, cornerRadius: 15, color: Color.accentColor.opacity(0.5))
                         }
                     }
                     

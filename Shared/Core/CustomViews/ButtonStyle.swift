@@ -23,7 +23,7 @@ struct AccentButton: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .font(size == .small ? .caption.weight(.bold) : .body.weight(.bold))
-            .padding(.vertical, size == .small ? 6 : 9)
+            .padding(.vertical, size == .small ? 8 : 10)
             .padding(.horizontal, size == .small ? 12 : 15)
             .background(
                 LinearGradient(
@@ -53,7 +53,7 @@ struct OutlinedButton: ButtonStyle {
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .font(size == .small ? .caption.weight(.bold) : .body.weight(.bold))
-            .padding(.vertical, size == .small ? 6 : 9)
+            .padding(.vertical, size == .small ? 8 : 10)
             .padding(.horizontal, size == .small ? 12 : 15)
             .background(Color.clear)
             .foregroundColor(!isEnabled ? Color.tertiaryLabel : Color.accentColor)

@@ -48,9 +48,7 @@ struct DeliveryTimeline: View {
                                 .font(.caption.weight(.light))
                                 .foregroundColor(.secondaryLabel)
                         }
-                        
-                        Spacer().frame(height: 5)
-                        
+                                                
                         Text(tracking.description)
                             .font(.body.weight(.light))
                             .foregroundColor(.label)

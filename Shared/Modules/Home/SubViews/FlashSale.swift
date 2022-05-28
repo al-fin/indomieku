@@ -7,8 +7,10 @@
 
 import SwiftUI
 
+
 struct FlashSale: View {
     var products: [Product]
+    var remainingTime: Date
     
     @Environment(\.colorScheme) var colorScheme
     
@@ -26,7 +28,9 @@ struct FlashSale: View {
                 
                 Spacer()
                 
-                Countdown()
+                Countdown(
+                    endDate: remainingTime
+                )
             }
             .padding()
             .background(Color.secondarySystemBackground.ignoresSafeArea())

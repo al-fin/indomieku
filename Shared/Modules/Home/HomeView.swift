@@ -22,8 +22,9 @@ struct HomeView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            HomeNavBar(keyword: $presenter.keyword)
-                .padding()
+            HomeNavBar(presenter: presenter)
+                .padding(.horizontal)
+                .padding(.bottom)
                 .background(
                     LinearGradient(
                         gradient: Gradient(
@@ -62,11 +63,13 @@ struct HomeView: View {
                     }
                     
                     Banners(
-                        banners: presenter.banners
+                        banners: presenter.banners,
+                        activeBanner: $presenter.activeBanner
                     )
                     
                     FlashSale(
-                        products: presenter.products
+                        products: presenter.products,
+                        remainingTime: presenter.flashSaleRemainingTime
                     )
                     
                     ProductsOverview(
@@ -91,8 +94,23 @@ struct HomeView: View {
         }
         .navigationTitle("")
         .navigationBarHidden(true)
-        
         .background(offset >= 25 ? Color.systemBackground : Color.accentColor)
+        .onReceive(presenter.bannerTimer) { time in
+            if presenter.activeBanner == presenter.banners.count-1 {
+                withAnimation {
+                    presenter.activeBanner = 0
+                }
+            } else {
+                withAnimation {
+                    presenter.activeBanner += 1
+                }
+            }
+        }
+        .onReceive(presenter.flashSaleTimer) { time in
+            withAnimation {
+                presenter.flashSaleRemainingTime.addTimeInterval(-1)
+            }
+        }
     }
 }
 

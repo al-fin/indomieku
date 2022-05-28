@@ -18,11 +18,12 @@ struct ProductDetailOffsetKey: PreferenceKey {
 
 struct ProductDetailView: View {
     @ObservedObject var presenter: ProductDetailPresenter
-    
+
     @Environment(\.presentationMode) var presentationMode
     @Environment(\.colorScheme) var colorScheme
 
     @State private var offset = CGFloat.zero
+    
     
     var body: some View {
         VStack(spacing: 0) {
@@ -74,8 +75,8 @@ struct ProductDetailView: View {
                                     .padding(.vertical, 4)
                                     .padding(.horizontal, 8)
                                     .background(Color.accentColor.opacity(0.15))
-                                    .cornerRadius(8)
-                                    .border(width: 1, cornerRadius: 8, color: Color.accentColor.opacity(0.5))
+                                    .cornerRadius(15)
+                                    .border(width: 1, cornerRadius: 15, color: Color.accentColor.opacity(0.5))
                             }
                         }
                         
@@ -102,7 +103,9 @@ struct ProductDetailView: View {
                             .font(.body.weight(.light))
                             .foregroundColor(.label)
                         
-                        Spacer().frame(height: 20)
+                        Divider()
+                            .background(Color.tertiaryLabel)
+                            .frame(height: 20)
                         
                         Group {
                             Text("Ulasan Pembeli")
@@ -185,12 +188,12 @@ struct ProductDetailView: View {
     }
 }
 
-struct ProductDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        ProductDetailView(
-            presenter: ProductDetailPresenter(
-                interactor: ProductDetailInteractor()
-            )
-        )
-    }
-}
+//struct ProductDetailView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        ProductDetailView(
+//            presenter: ProductDetailPresenter(
+//                interactor: ProductDetailInteractor()
+//            )
+//        )
+//    }
+//}

@@ -7,6 +7,9 @@
 
 import Foundation
 import SwiftUI
+import Combine
+
+let FLASH_SALE_ENDS: Date = Calendar.current.date(bySettingHour: 23, minute: 59, second: 59, of: Date())! // today at 23:59:59
 
 protocol HomePresenterProtocol {
     var interactor: HomeInteractor { get }
@@ -14,6 +17,15 @@ protocol HomePresenterProtocol {
     var keyword: String { get }
     var categories: [ProductCategory] { get }
     var banners: [String] { get }
+    
+    var activeBanner: Int { get }
+    var bannerTimer: Publishers.Autoconnect<Timer.TimerPublisher> { get }
+    
+    var flashSaleRemainingTime: Date { get }
+    var flashSaleTimer: Publishers.Autoconnect<Timer.TimerPublisher> { get }
+    
+    var cartView: CartView { get }
+    var notificationView: NotificationView { get }
 }
 
 final class HomePresenter: HomePresenterProtocol, ObservableObject {
@@ -50,6 +62,24 @@ final class HomePresenter: HomePresenterProtocol, ObservableObject {
     let banners: [String] = Array(1...5).map { "\($0)-banner" }
     
     @Published internal var keyword = ""
+    
+    @Published internal var activeBanner = 0
+    let bannerTimer = Timer.publish(every: 3, on: .main, in: .common).autoconnect()
+    
+    @Published internal var flashSaleRemainingTime: Date =  FLASH_SALE_ENDS - Date()
+    let flashSaleTimer: Publishers.Autoconnect<Timer.TimerPublisher> = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
+    
+    var cartView: CartView = CartView(
+        presenter: CartPresenter(
+            interactor: CartInteractor()
+        )
+    )
+    
+    var notificationView: NotificationView = NotificationView(
+        presenter: NotificationPresenter(
+            interactor: NotificationInteractor()
+        )
+    )
 
     init(interactor: HomeInteractor) {
         self.interactor = interactor

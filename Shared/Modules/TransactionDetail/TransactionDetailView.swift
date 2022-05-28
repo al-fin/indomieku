@@ -11,7 +11,7 @@ import SwiftUI
 
 struct TransactionDetailView: View {
     @ObservedObject var presenter: TransactionDetailPresenter
-    
+
     @Environment(\.colorScheme) var colorScheme
     
     @State private var offset = CGFloat.zero
@@ -53,8 +53,8 @@ struct TransactionDetailView: View {
                                     .padding(.vertical, 4)
                                     .padding(.horizontal, 8)
                                     .background(Color.accentColor.opacity(0.15))
-                                    .cornerRadius(8)
-                                    .border(width: 1, cornerRadius: 8, color: Color.accentColor.opacity(0.5))
+                                    .cornerRadius(15)
+                                    .border(width: 1, cornerRadius: 15, color: Color.accentColor.opacity(0.5))
                             }
                         }
                         

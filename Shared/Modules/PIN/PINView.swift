@@ -54,6 +54,7 @@ struct PINView: View {
             .padding()
             .foregroundColor(.white)
             .navBarHidden(true)
+//            .onAppear(perform: presenter.authenticateFaceID)
         }
     }
     
@@ -63,9 +64,13 @@ struct PINView: View {
             let num = index == 11 ? 0 : index
             
             if index == 10 {
-                Image(systemName: "faceid")
-                    .font(.title)
-                    .frame(width: 100, height: 100)
+                Button(action: {
+                    presenter.authenticateFaceID()
+                }, label: {
+                    Image(systemName: "faceid")
+                        .font(.title)
+                        .frame(width: 100, height: 100)
+                })
             } else if index == 12 {
                 Button(action: {
                     presenter.onDeletePIN()

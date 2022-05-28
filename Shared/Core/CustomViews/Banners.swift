@@ -9,14 +9,16 @@ import SwiftUI
 
 struct Banners: View {
     var banners: [String]
+    var activeBanner: Binding<Int>
     
     @Environment(\.colorScheme) var colorScheme
-    @State private var activeBanner = "1-banner"
     
     var body: some View {
         VStack {
-            TabView(selection: $activeBanner.animation()) {
-                ForEach(banners, id: \.self) { banner in
+            TabView(selection: activeBanner.animation()) {
+                ForEach(0..<banners.count, id: \.self) { i in
+                    let banner = banners[i]
+                    
                     Image(banner)
                         .resizable()
                         .scaledToFit()
@@ -28,20 +30,20 @@ struct Banners: View {
                                 .shadow(color: Color.black.opacity(0.15), radius: 16, x: 0, y: 0)
                         }
                         .padding(.horizontal)
-                        .tag(banner)
+                        .tag(i)
                 }
             }
             .tabViewStyle(PageTabViewStyle(indexDisplayMode: .never))
             .frame(height: 175)
             
             HStack {
-                ForEach(banners, id: \.self) { banner in
+                ForEach(0..<banners.count, id: \.self) { i in
                     RoundedRectangle(cornerRadius: 7.5)
-                        .fill(banner == activeBanner ? Color.accentColor : Color.quaternaryLabel)
-                        .frame(width: banner == activeBanner ? 45 : 15, height: 15)
+                        .fill(i == activeBanner.wrappedValue ? Color.accentColor : Color.quaternaryLabel)
+                        .frame(width: i == activeBanner.wrappedValue ? 45 : 15, height: 15)
                         .onTapGesture {
                             withAnimation {
-                                activeBanner = banner
+                                activeBanner.wrappedValue = i
                             }
                         }
                 }
