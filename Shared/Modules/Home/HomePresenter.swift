@@ -23,9 +23,6 @@ protocol HomePresenterProtocol {
     
     var flashSaleRemainingTime: Date { get }
     var flashSaleTimer: Publishers.Autoconnect<Timer.TimerPublisher> { get }
-    
-    var cartView: CartView { get }
-    var notificationView: NotificationView { get }
 }
 
 final class HomePresenter: HomePresenterProtocol, ObservableObject {
@@ -69,17 +66,6 @@ final class HomePresenter: HomePresenterProtocol, ObservableObject {
     @Published internal var flashSaleRemainingTime: Date =  FLASH_SALE_ENDS - Date()
     let flashSaleTimer: Publishers.Autoconnect<Timer.TimerPublisher> = Timer.publish(every: 1, on: .main, in: .common).autoconnect()
     
-    var cartView: CartView = CartView(
-        presenter: CartPresenter(
-            interactor: CartInteractor()
-        )
-    )
-    
-    var notificationView: NotificationView = NotificationView(
-        presenter: NotificationPresenter(
-            interactor: NotificationInteractor()
-        )
-    )
 
     init(interactor: HomeInteractor) {
         self.interactor = interactor

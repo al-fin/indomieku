@@ -7,21 +7,33 @@
 
 import SwiftUI
 
+var cartView: CartView = CartView(
+    presenter: CartPresenter(
+        interactor: CartInteractor()
+    )
+)
+
+var notificationView: NotificationView = NotificationView(
+    presenter: NotificationPresenter(
+        interactor: NotificationInteractor()
+    )
+)
+
 struct HomeNavBar: View {
-    @ObservedObject var presenter: HomePresenter
+    var keyword: Binding<String>
     
     var body: some View {
         HStack(spacing: 10) {
             CustomTextField(
                 label: "",
                 placeholder: "Cari mie favoritmu di sini...",
-                text: $presenter.keyword,
+                text: keyword,
                 startIcon: "icon.search",
                 iconSource: .assets
             )
             
             NavLink(
-                destination: presenter.cartView
+                destination: cartView
             ) {
                 Image("icon.cart")
                     .renderingMode(.template)
@@ -34,7 +46,7 @@ struct HomeNavBar: View {
             }
             
             NavLink(
-                destination: presenter.notificationView
+                destination: notificationView
             ) {
                 Image("icon.notification")
                     .renderingMode(.template)

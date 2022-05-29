@@ -77,8 +77,6 @@
 		A1927B0B2839118C0073F108 /* FlashSale.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1927B0A2839118C0073F108 /* FlashSale.swift */; };
 		A1927B0D283912E80073F108 /* ProductsOverview.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1927B0C283912E80073F108 /* ProductsOverview.swift */; };
 		A1927B11283922AC0073F108 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1927B10283922AC0073F108 /* Int+Extensions.swift */; };
-		A1A138D5283509F100BF65C6 /* PlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A138D4283509F100BF65C6 /* PlaygroundView.swift */; };
-		A1A138D6283509F100BF65C6 /* PlaygroundView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A138D4283509F100BF65C6 /* PlaygroundView.swift */; };
 		A1A34CA2282A5C9800D6C0B7 /* IndomiekuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A34C92282A5C8700D6C0B7 /* IndomiekuApp.swift */; };
 		A1A34CA3282A5C9800D6C0B7 /* IndomiekuApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A34C92282A5C8700D6C0B7 /* IndomiekuApp.swift */; };
 		A1A34CA4282A5C9800D6C0B7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A1A34C93282A5C8700D6C0B7 /* ContentView.swift */; };
@@ -187,7 +185,6 @@
 		A1927B0A2839118C0073F108 /* FlashSale.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashSale.swift; sourceTree = "<group>"; };
 		A1927B0C283912E80073F108 /* ProductsOverview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProductsOverview.swift; sourceTree = "<group>"; };
 		A1927B10283922AC0073F108 /* Int+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
-		A1A138D4283509F100BF65C6 /* PlaygroundView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaygroundView.swift; sourceTree = "<group>"; };
 		A1A34C92282A5C8700D6C0B7 /* IndomiekuApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndomiekuApp.swift; sourceTree = "<group>"; };
 		A1A34C93282A5C8700D6C0B7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		A1A34C94282A5C9800D6C0B7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -507,7 +504,6 @@
 				A17B6219282BCF0B00657323 /* Modules */,
 				A1A34C92282A5C8700D6C0B7 /* IndomiekuApp.swift */,
 				A1A34C93282A5C8700D6C0B7 /* ContentView.swift */,
-				A1A138D4283509F100BF65C6 /* PlaygroundView.swift */,
 				A1F385A7282C91F200B2B264 /* Indomieku.xcdatamodeld */,
 				A1F385A1282C869800B2B264 /* LaunchScreen.storyboard */,
 				A1A34C94282A5C9800D6C0B7 /* Assets.xcassets */,
@@ -758,7 +754,6 @@
 				A1A34CBE282A661E00D6C0B7 /* Theme+Extensions.swift in Sources */,
 				A1927B11283922AC0073F108 /* Int+Extensions.swift in Sources */,
 				A166AD512831FB820001DBDD /* ProfileView.swift in Sources */,
-				A1A138D5283509F100BF65C6 /* PlaygroundView.swift in Sources */,
 				A123753928420F8E0056896B /* DeliveryTimeline.swift in Sources */,
 				A166AD4C2831FB820001DBDD /* NotificationView.swift in Sources */,
 				A12B61E0282F3E7200A94C86 /* ButtonStyle.swift in Sources */,
@@ -813,7 +808,6 @@
 				A1A34CA3282A5C9800D6C0B7 /* IndomiekuApp.swift in Sources */,
 				A1F385AA282C91F200B2B264 /* Indomieku.xcdatamodeld in Sources */,
 				A1A34CB9282A60CC00D6C0B7 /* Font+Extensions.swift in Sources */,
-				A1A138D6283509F100BF65C6 /* PlaygroundView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

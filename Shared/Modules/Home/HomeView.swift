@@ -22,7 +22,7 @@ struct HomeView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            HomeNavBar(presenter: presenter)
+            HomeNavBar(keyword: $presenter.keyword)
                 .padding(.horizontal)
                 .padding(.bottom)
                 .background(
